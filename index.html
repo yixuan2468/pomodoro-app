@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="timer-card" aria-labelledby="page-title">
+      <header class="timer-header">
+        <p class="eyebrow">Focus timer</p>
+        <h1 id="page-title">Pomodoro</h1>
+      </header>
+
+      <section class="timer" aria-label="Timer">
+        <p class="phase-label" id="phase-label">Work</p>
+
+        <div class="progress-ring">
+          <svg class="progress-ring__svg" viewBox="0 0 240 240" aria-hidden="true">
+            <circle class="progress-ring__track" cx="120" cy="120" r="108"></circle>
+            <circle
+              class="progress-ring__indicator"
+              id="progress-indicator"
+              cx="120"
+              cy="120"
+              r="108"
+            ></circle>
+          </svg>
+          <p class="time-display" id="time-display" aria-live="polite" aria-atomic="true">--:--</p>
+        </div>
+
+        <p class="session-count">
+          Completed work sessions:
+          <span id="session-count">0</span>
+        </p>
+        <p class="timer-status" id="timer-status" role="status" aria-live="polite">Ready to start</p>
+      </section>
+
+      <section class="controls" aria-label="Timer controls">
+        <button class="button button--primary" id="start-button" data-action="start" type="button">
+          Start
+        </button>
+        <button class="button" id="pause-button" data-action="pause" type="button">
+          Pause
+        </button>
+        <button class="button" id="resume-button" data-action="resume" type="button">
+          Resume
+        </button>
+        <button class="button button--subtle" id="reset-button" data-action="reset" type="button">
+          Reset
+        </button>
+      </section>
+    </main>
+  </body>
+</html>

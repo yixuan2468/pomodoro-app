@@ -1,0 +1,234 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #27332d;
+  background: #f4f6f1;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background:
+    radial-gradient(ellipse at 12% 10%, rgb(224 235 220 / 78%), transparent 48%),
+    radial-gradient(ellipse at 88% 90%, rgb(248 231 211 / 75%), transparent 46%),
+    #f4f6f1;
+}
+
+.timer-card {
+  width: min(100%, 29rem);
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  text-align: center;
+  background: rgb(255 255 253 / 92%);
+  border: 1px solid rgb(224 230 220 / 90%);
+  border-radius: 1.75rem;
+  box-shadow: 0 1.5rem 4rem rgb(44 62 49 / 12%), 0 0.2rem 0.7rem rgb(44 62 49 / 5%);
+  backdrop-filter: blur(12px);
+}
+
+.timer-header {
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin: 0;
+  padding: 0.35rem 0.7rem;
+  color: #597360;
+  background: #edf3e9;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.65rem 0 0;
+  color: #27332d;
+  font-size: clamp(1.8rem, 7vw, 2.25rem);
+  letter-spacing: -0.055em;
+}
+
+.phase-label {
+  display: table;
+  margin: 0 auto 0.7rem;
+  padding: 0.4rem 0.9rem;
+  color: #49664f;
+  background: #edf3e9;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.progress-ring {
+  position: relative;
+  width: min(100%, 14.5rem);
+  margin: 0 auto;
+  aspect-ratio: 1;
+}
+
+.progress-ring__svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-ring__track,
+.progress-ring__indicator {
+  fill: none;
+  stroke-width: 9;
+}
+
+.progress-ring__track {
+  stroke: #e8ede6;
+}
+
+.progress-ring__indicator {
+  stroke: #6b9275;
+  stroke-linecap: round;
+}
+
+.time-display {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  color: #27332d;
+  font-size: clamp(2.65rem, 12vw, 3.35rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  letter-spacing: -0.07em;
+}
+
+.session-count {
+  display: table;
+  margin: 1.2rem auto 0.45rem;
+  padding: 0.6rem 0.95rem;
+  color: #59665c;
+  background: #f2f4ee;
+  border: 1px solid #e8ece4;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.session-count span {
+  margin-left: 0.2rem;
+  color: #344d3a;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.timer-status {
+  min-height: 1.5em;
+  margin: 0;
+  color: #7a857c;
+  font-size: 0.875rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 1.4rem;
+}
+
+.button {
+  min-height: 2.75rem;
+  padding: 0.65rem 1.05rem;
+  color: #405448;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 650;
+  background: #fff;
+  border: 1px solid #d9e1d7;
+  border-radius: 0.85rem;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.button:hover:not(:disabled) {
+  background: #f5f8f3;
+  border-color: #b7c8b7;
+}
+
+.button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.button:focus-visible {
+  outline: 3px solid #a4bca3;
+  outline-offset: 3px;
+}
+
+.button:disabled {
+  color: #9ba69b;
+  background: #f4f6f2;
+  border-color: #e4e9e1;
+  cursor: not-allowed;
+}
+
+.button--primary {
+  color: #fff;
+  background: #557a60;
+  border-color: #557a60;
+  box-shadow: 0 0.3rem 0.7rem rgb(63 104 72 / 18%);
+}
+
+.button--primary:hover:not(:disabled) {
+  background: #45694f;
+  border-color: #45694f;
+  box-shadow: 0 0.4rem 0.9rem rgb(63 104 72 / 24%);
+}
+
+.button--subtle {
+  color: #77847a;
+  background: transparent;
+  border-color: transparent;
+}
+
+.button--subtle:hover:not(:disabled) {
+  color: #405448;
+  background: #f2f5ef;
+  border-color: #e4e9e1;
+}
+
+@media (max-width: 380px) {
+  body {
+    padding: 1rem;
+  }
+
+  .controls {
+    gap: 0.5rem;
+  }
+
+  .button {
+    flex: 1 1 calc(50% - 0.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
